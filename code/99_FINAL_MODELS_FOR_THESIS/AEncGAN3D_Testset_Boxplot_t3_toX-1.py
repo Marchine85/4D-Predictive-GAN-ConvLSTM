@@ -1,0 +1,105 @@
+import os
+import numpy as np
+import matplotlib.pyplot as plt
+    
+base_dir = r"Z:\Master_Thesis\code\99_FINAL_MODELS_FOR_THESIS"
+
+if not os.path.exists(os.path.join(base_dir,'plots')):
+    os.makedirs(os.path.join(base_dir,'plots'))
+
+# IMPORT SINGLE FRAME INPUT MODEL ERRORS
+errors_t20_inc1_t3 = np.loadtxt(os.path.join(base_dir, "evals\AEncGAN3D_TestSet_Errors_T20_TINC1_t3_toX-1.txt"), delimiter=",", skiprows=1)
+errors_t40_inc2_t3 = np.loadtxt(os.path.join(base_dir, "evals\AEncGAN3D_TestSet_Errors_T40_TINC2_t3_toX-1.txt"), delimiter=",", skiprows=1)
+errors_t80_inc4_t3 = np.loadtxt(os.path.join(base_dir, "evals\AEncGAN3D_TestSet_Errors_T80_TINC4_t3_toX-1.txt"), delimiter=",", skiprows=1)
+
+###############################################################################
+# PLOT MSE ERRORS
+###############################################################################
+mse_t20_inc1 = errors_t20_inc1_t3[:,0]
+mse_null_t20_inc1 = errors_t20_inc1_t3[:,1]
+mse_input_t20_inc1 = errors_t20_inc1_t3[:,2]
+
+mse_t40_inc2 = errors_t40_inc2_t3[:,0]
+mse_null_t40_inc2 = errors_t40_inc2_t3[:,1]
+mse_input_t40_inc2 = errors_t40_inc2_t3[:,2]
+
+mse_t80_inc4 = errors_t80_inc4_t3[:,0]
+mse_null_t80_inc4 = errors_t80_inc4_t3[:,1]
+mse_input_t80_inc4 = errors_t80_inc4_t3[:,2]
+
+fig, axs = plt.subplots(3, 2, sharex=True, sharey=False, layout="constrained", figsize=(10, 10))
+colors = ["crimson", "navy", "seagreen"]
+meanlineprops = dict(linestyle='', linewidth=0.8, color='black', marker="*", markeredgecolor='black', markerfacecolor='black')
+medianlineprops = dict(linestyle='-', linewidth=0.8, color='black')
+
+labels = ["Prediction vs Target(xt1)", "Prediction vs Input(xt0)", "Null Model (xt1 vs xt0)"]
+
+data = [mse_t20_inc1, mse_input_t20_inc1, mse_null_t20_inc1]
+bplot1 = axs[0,0].boxplot(data, vert=True, patch_artist=True, showfliers=False, showmeans=True, meanline=False, meanprops=meanlineprops, medianprops=medianlineprops)
+axs[0,0].set_title("MSE ERRORS - Single Frame Input Model\nT=20 TINC=1")
+axs[0,0].grid(True)
+axs[0,0].set_ylabel('Error')
+
+
+data = [mse_t40_inc2, mse_input_t40_inc2, mse_null_t40_inc2]
+bplot2 = axs[1,0].boxplot(data, vert=True, patch_artist=True, showfliers=False, showmeans=True, meanline=False, meanprops=meanlineprops, medianprops=medianlineprops)
+axs[1,0].set_title("T=40 TINC=2")
+axs[1,0].grid(True)
+axs[1,0].set_ylabel('Error')
+
+
+data = [mse_t80_inc4, mse_input_t80_inc4, mse_null_t80_inc4]
+bplot3 = axs[2,0].boxplot(data, vert=True, patch_artist=True, showfliers=False, showmeans=True, meanline=False, meanprops=meanlineprops, medianprops=medianlineprops)
+axs[2,0].set_title("T=80 TINC=4")
+axs[2,0].grid(True)
+axs[2,0].set_ylabel('Error')
+axs[2,0].set_xticks([])
+
+# ###############################################################################
+# # PLOT JACCARD ERRORS
+# ###############################################################################
+jaccard_t20_inc1 = errors_t20_inc1_t3[:,3]
+jaccard_null_t20_inc1 = errors_t20_inc1_t3[:,4]
+jaccard_input_t20_inc1 = errors_t20_inc1_t3[:,5]
+
+jaccard_t40_inc2 = errors_t40_inc2_t3[:,3]
+jaccard_null_t40_inc2 = errors_t40_inc2_t3[:,4]
+jaccard_input_t40_inc2 = errors_t40_inc2_t3[:,5]
+
+jaccard_t80_inc4 = errors_t80_inc4_t3[:,3]
+jaccard_null_t80_inc4 = errors_t80_inc4_t3[:,4]
+jaccard_input_t80_inc4 = errors_t80_inc4_t3[:,5]
+
+data = [jaccard_t20_inc1, jaccard_input_t20_inc1, jaccard_null_t20_inc1]
+bplot4 = axs[0,1].boxplot(data, vert=True, patch_artist=True, showfliers=False, showmeans=True, meanline=False, meanprops=meanlineprops, medianprops=medianlineprops)
+axs[0,1].set_title("JACCARD ERRORS - Single Frame Input Model\nT=20 TINC=1")
+axs[0,1].grid(True)
+#axs[0,1].set_ylabel('Error')
+
+
+data = [jaccard_t40_inc2, jaccard_input_t40_inc2, jaccard_null_t40_inc2]
+bplot5 = axs[1,1].boxplot(data, vert=True, patch_artist=True, showfliers=False, showmeans=True, meanline=False, meanprops=meanlineprops, medianprops=medianlineprops)
+axs[1,1].set_title("T=40 TINC=2")
+axs[1,1].grid(True)
+#axs[1,1].set_ylabel('Error')
+
+
+data = [jaccard_t80_inc4, jaccard_input_t80_inc4, jaccard_null_t80_inc4]
+bplot6 = axs[2,1].boxplot(data, vert=True, patch_artist=True, showfliers=False, showmeans=True, meanline=False, meanprops=meanlineprops, medianprops=medianlineprops)
+axs[2,1].set_title("T=80 TINC=4")
+axs[2,1].grid(True)
+#axs[2,1].set_ylabel('Error')
+axs[2,0].set_xticks([])
+
+
+# fill with colors
+
+for bplot in (bplot1, bplot2, bplot3, bplot4, bplot5, bplot6):
+    for patch, color in zip(bplot['boxes'], colors):
+        patch.set_facecolor(color)
+        patch.set_alpha(0.5)
+
+fig.legend([bplot1["boxes"][0], bplot1["boxes"][1], bplot1["boxes"][2], bplot1["means"][0]], ["Prediction(~xt1) vs Target(xt1)", "Prediction(~xt1) vs Input(xt-1)", "Target(xt1) vs Input(xt-1) - Null Model", "Mean"], loc='lower center', ncols=4, bbox_to_anchor=(0.5, -0.04), bbox_transform=fig.transFigure)
+
+
+plt.savefig(os.path.join(base_dir,"plots/AEncGAN3D_MSEJaccard_Errors_Boxplot_t3_toX-1.png"), bbox_inches="tight")

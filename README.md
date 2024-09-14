@@ -1,6 +1,6 @@
 3D Spatio-Temporal (4D) Predictions with ConvLSTM and GAN models
 =====================================
-This is the code for reproducing experiments from the master's thesis ["3D Spatio-Temporal Predictions with ConvLSTM and GAN models"]("thesis/Thesis_3DSpatioTemporalPredictions.pdf") written at FH Technikum Vienna.
+This is the code for reproducing experiments from the master's thesis ["3D Spatio-Temporal Predictions with ConvLSTM and GAN models"](thesis/Thesis_3DSpatioTemporalPredictions.pdf) written at FH Technikum Vienna.
 
 ## Overview
 __Abstract__<br>
@@ -48,7 +48,7 @@ to be found between an object resolution still covering differences of relevant 
 training time on a single GPU setup. Therefore, all the 32000 data-points were converted from
 128x128x128x128 to the size per sample of 128x16x16x16 and split into training-, validation- and
 testing sets (80%, 10%, 10% split).
-The downscaled TFrecords datasets can be found in [data]("data"). Each datapoint is in the format of 128x16x16x16 (128 time points of a 3D object with the resolution of 16³).
+The downscaled TFrecords datasets can be found in [data](data). Each datapoint is in the format of 128x16x16x16 (128 time points of a 3D object with the resolution of 16³).
 <p align="center">
   <img src="thesis/PICS/sample_128res_16res.png" width="500">
   <br>
@@ -63,12 +63,12 @@ The downscaled TFrecords datasets can be found in [data]("data"). Each datapoint
 
 ## Models
 
-The code for all the models can be found in [code]("code"). <br>
-- [AEncGAN3D]("code/01_AEncGAN3D"): GAN-based models (single frame input, 3 prev. frames input)
-- [ConvLSTM3D]("code/02_ConvLSTM3D"): ConvLSTM model
-- [Trained Models]("code/99_FINAL_MODELS_FOR_THESIS"): All trained models used in the thesis, incl. post processing scripts
+The code for all the models can be found in [code](code). <br>
+- [AEncGAN3D](code/01_AEncGAN3D): GAN-based models (single frame input, 3 prev. frames input)
+- [ConvLSTM3D](code/02_ConvLSTM3D): ConvLSTM model
+- [Trained Models](code/99_FINAL_MODELS_FOR_THESIS): All trained models used in the thesis, incl. post processing scripts
 
-For more details please look into ["3D Spatio-Temporal Predictions with ConvLSTM and GAN models"]("thesis/Thesis_3DSpatioTemporalPredictions.pdf")
+For more details please look into ["3D Spatio-Temporal Predictions with ConvLSTM and GAN models"](thesis/Thesis_3DSpatioTemporalPredictions.pdf)
 
 ## Prediction Examples
 
@@ -91,4 +91,4 @@ For more details please look into ["3D Spatio-Temporal Predictions with ConvLSTM
 This code borrows from
 + [Next-Frame Video Prediction with Convolutional LSTMs](https://keras.io/examples/vision/conv_lstm/)
 + [Improved Training of Wasserstein GANs](https://github.com/igul222/improved_wgan_training)
-+ [Motionganvae](https://github.com/tkarras/progressive_growing_of_gans)
++ [Motionganvae](https://github.com/tanlinc/Motionganvae)

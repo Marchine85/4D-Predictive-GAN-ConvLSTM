@@ -64,9 +64,9 @@ The downscaled TFrecords datasets can be found in [data](data). Each datapoint i
 ## Models
 
 The code for all the models can be found in [code](code). <br>
-- [AEncGAN3D]("code/01_AEncGAN3D"): GAN-based models (single frame input, 3 prev. frames input)
-- [ConvLSTM3D]("code/02_ConvLSTM3D"): ConvLSTM model
-- [Trained Models]("code/99_FINAL_MODELS_FOR_THESIS"): All trained models used in the thesis, incl. post processing scripts
+- [AEncGAN3D](code/01_AEncGAN3D): GAN-based models (single frame input, 3 prev. frames input)
+- [ConvLSTM3D](code/02_ConvLSTM3D): ConvLSTM model
+- [Trained Models](code/99_FINAL_MODELS_FOR_THESIS): All trained models used in the thesis, incl. post processing scripts
 
 For more details please look into ["3D Spatio-Temporal Predictions with ConvLSTM and GAN models"](thesis/Thesis_3DSpatioTemporalPredictions.pdf)
 
@@ -91,4 +91,4 @@ For more details please look into ["3D Spatio-Temporal Predictions with ConvLSTM
 This code borrows from
 + [Next-Frame Video Prediction with Convolutional LSTMs](https://keras.io/examples/vision/conv_lstm/)
 + [Improved Training of Wasserstein GANs](https://github.com/igul222/improved_wgan_training)
-+ [Motionganvae](https://github.com/tkarras/progressive_growing_of_gans)
++ [Motionganvae](https://github.com/tanlinc/Motionganvae)

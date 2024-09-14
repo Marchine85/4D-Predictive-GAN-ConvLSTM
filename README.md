@@ -73,14 +73,14 @@ For more details please look into ["3D Spatio-Temporal Predictions with ConvLSTM
 ## Prediction Examples
 
 <p align="center">
-  <img src="thesis/PICS/ConvLSTM_longterm_example_prediction.jpg" width="800">
+  <img src="thesis/PICS/ConvLSTM_longterm_example_prediction.jpg" width="600">
   <br>
   <em>ConvLSTM Model - Exemplary generated long-term predictions</em>
   <br>
 </p>
 
 <p align="center">
-  <img src="thesis/PICS/multiple_frame_input_longterm_example_prediction.jpg" width="800">
+  <img src="thesis/PICS/multiple_frame_input_longterm_example_prediction.jpg" width="600">
   <br>
   <em>GAN-based Model - Exemplary generated long-term predictions</em>
   <br>

@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Goldgruber"
+  given-names: "Markus"
+title: "4D-Predictive-GAN-ConvLSTM"
+version: 1.0.0
+date-released: 2024-09-14
+url: "https://github.com/Marchine85/4D-Predictive-GAN-ConvLSTM"

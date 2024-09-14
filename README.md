@@ -1,6 +1,6 @@
 3D Spatio-Temporal (4D) Predictions with ConvLSTM and GAN models
 =====================================
-This is the code for reproducing experiments from the master's thesis '3D Spatio-Temporal Predictions with ConvLSTM and GAN models' written at FH Technikum Vienna.
+This is the code for reproducing experiments from the master's thesis ["3D Spatio-Temporal Predictions with ConvLSTM and GAN models"]("thesis/Thesis_3DSpatioTemporalPredictions.pdf") written at FH Technikum Vienna.
 
 ## Overview
 __Abstract__<br>

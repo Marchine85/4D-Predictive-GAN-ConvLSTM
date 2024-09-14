@@ -58,7 +58,7 @@ The downscaled TFrecords datasets can be found in [data](data). Each datapoint i
 
 ## Prerequisites
 
-- Python, NumPy, TensorFlow 2.10, SciPy, Matplotlib
+- Python, NumPy, TensorFlow 2.10, SciPy, Matplotlib, skimage, mpl_toolkits, trimesh, stl
 - NVIDIA GPU
 
 ## Models
@@ -92,3 +92,4 @@ This code borrows from
 + [Next-Frame Video Prediction with Convolutional LSTMs](https://keras.io/examples/vision/conv_lstm/)
 + [Improved Training of Wasserstein GANs](https://github.com/igul222/improved_wgan_training)
 + [Motionganvae](https://github.com/tanlinc/Motionganvae)
++ [tf-3dgan](https://github.com/meetps/tf-3dgan/tree/master)
